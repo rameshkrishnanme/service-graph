@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html style="">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="js/d3.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/ngDialog.js"></script>
+<script type="text/javascript" src="js/tinycolor-min.js"></script>
+<script type="text/javascript" src="js/mdColorPicker.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="css/mdColorPicker.min.css">
+<link rel="stylesheet" type="text/css" href="css/ngDialog.css">
+<link rel="stylesheet" type="text/css" href="css/ngDialog-theme-default.css">
+
+
+
+</head>
+<body ng-app="app" ng-controller="appController">
+	<div class="right-tab">
+		<img ng-repeat="bnt in actionButtons" alt="{{bnt.text}}"
+			src="images/{{bnt.url}}" ng-click="openInputDialog(bnt)" />
+	</div>
+	
+	<div id="map"></div>
+	
+	
+	<script type="text/ng-template" id="addDomain">
+		<div ng-controller="appController">
+    	<h2>Add Domain</h2>
+		<label for="Name">Domain Name:</label>
+		<input type="text" name="name" value="" ng-model="domain.Name" /><br />
+
+		
+		<label for="Desc">Description:</label>
+		<textarea name="description"  ng-model="domain.Desc"></textarea><br />
+
+		<label for="Name">Color</label>
+		<div md-color-picker
+   		 	 ng-model="domain.Color"
+    		 label="Choose a color"
+   			 icon="brush"
+    		 default="#f00"
+  		  	 md-color-generic-palette="false"
+   		 	 md-color-history="false"></div>
+
+		<a href="" ng-click="createDomain()" class="action-btn" ng-like="">Save</a>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="addService">
+		<div ng-controller="appController">
+    		<h2>Add Service</h2>
+			<label for="Name">Service Name:</label>
+			<input type="text" name="name" value="" ng-model="service.Name" /><br />
+
+			<label for="Desc">Description:</label>
+			<textarea name="description"  ng-model="service.Desc"></textarea><br />
+
+			<label for="Name">Domain</label>
+			 <select name="singleSelect" id="singleSelect" ng-model="service.Domain">
+				<option ng-repeat="tdomain in graphDomain()" value="{{tdomain.uid}}">{{tdomain.dname}}</option>
+			 </select><br />
+
+			<a href="" ng-click="createService()" class="action-btn" ng-like="">Save</a>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="addOperation">
+		<div ng-controller="appController" ng-init="onOperationLoad()">
+
+		<input type="hidden" ng-model="ops.mode" ng-value="ngDialogData.mode" />
+		
+		<span ng-show="ngDialogData.showCreate">
+    		<h2>Add Operation</h2>
+			<label for="Name">Operation Name:</label>
+			<input type="text" ng-model="ops.ServiceName" />
+		<br />
+		</span>
+
+		<span ng-show="!(ngDialogData.showCreate)">
+    		<h2>Edit Operation</h2>
+			<label for="Name">Operation Name:</label>
+			<select name="singleSelectOperation" id="singleSelectOperation" ng-model="ops.CurrentOperation" ng-change="selectedOperation()">
+				<option ng-repeat="toperation in graphOperation()"  value="{{toperation}}">{{toperation.dname}}</option>
+		 	</select>
+		<br />	
+		</span>
+    	
+		
+		<label for="Desc">Description:</label>
+		<textarea name="description"  ng-model="ops.Desc"></textarea><br />
+
+		<label for="Name">Domain : </label>
+		 <select name="singleSelectDomain" id="singleSelectDomain" ng-model="ops.Domain">
+			<option ng-repeat="tdomain in graphDomain()" value="{{tdomain.uid}}">{{tdomain.dname}}</option>
+		 </select><br />
+
+		<label for="Name">Service : </label>
+		 <select name="singleSelectService" id="singleSelectService" ng-model="ops.Service">
+			<option ng-repeat="tservice in graphService()"  value="{{tservice.uid}}">{{tservice.dname}}</option>
+		 </select><br />
+
+		<div style="display:-webkit-box">
+			<label for="Name">Incoming : </label>
+		 	<select name="singleSelectInBefore" id="singleSelectInBefore" ng-model="ops.InBefore" multiple>
+				<option ng-repeat="toperation in graphOperation() | filter : filterIncoming"  value="{{toperation.uid}}">{{toperation.dname}}</option>
+		 	</select>
+		 	<a href="" ng-click="createMoveInRight()" class="action-nv-btn" ng-like="">Move >></a>
+         	<a href="" ng-click="createMoveInLeft()" class="action-nv-btn" ng-like="">Move <<</a>
+		 	<select name="singleSelectInAfter" id="singleSelectInAfter" ng-model="ops.InAfter" multiple>
+				<option ng-repeat="toperation in graphOperation() | filter : filterIncomingNgt"  value="{{toperation.uid}}">{{toperation.dname}}</option>
+		 	</select>
+		</div>
+
+		<br />
+		
+		<div style="display:-webkit-box">
+			<label for="Name">Outgoing : </label>
+		 	<select name="singleSelectOutBefore" id="singleSelectOutBefore" ng-model="ops.OutBefore" multiple>
+				<option ng-repeat="toperation in graphOperation() | filter : filterOutcoming"  value="{{toperation.uid}}">{{toperation.dname}}</option>
+		 	</select>
+
+			 <a href="" ng-click="createMoveOutRight()" class="action-nv-btn" ng-like="">Move >></a>
+         	<a href="" ng-click="createMoveOutLeft()" class="action-nv-btn" ng-like="">Move <<</a>
+
+		 	<select name="singleSelectOutAfter" id="singleSelectOutAfter" ng-model="ops.OutAfter" multiple>
+				<option ng-repeat="toperation in graphOperation() | filter : filterOutcomingNgt"  value="{{toperation.uid}}">{{toperation.dname}}</option>
+			</select>
+		</div>
+		<br />
+		
+        <a href="" ng-click="saveOperations()" class="action-btn" ng-like="">Save</a>
+		</div>
+	</script>
+
+
+</body>
+</html>

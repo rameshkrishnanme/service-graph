@@ -1,0 +1,125 @@
+.node {
+	stroke: #fff;
+	stroke-width: 1.5px;
+}
+
+.nodetext {
+	stroke: #555;
+	stroke-opacity: .3;
+	stroke-width: 0.5px;
+	font: 9px Comic Sans MS;
+	text-anchor: middle
+}
+
+.circles-1 {
+	
+}
+
+.node-active {
+	stroke: #ff8000;
+	stroke-width: 1.5px;
+}
+
+.link {
+	stroke: #555;
+	stroke-opacity: .3;
+}
+
+.link-active {
+	stroke: #ff8000;
+	stroke-opacity: 1;
+}
+
+.overlay {
+	fill: none;
+	pointer-events: all;
+}
+
+#map {
+	border: 2px #555 dashed; #
+	width: 500px; #
+	height: 400px;
+}
+
+.right-tab {
+	position: fixed;
+	height: 50%;
+	width: 45px;
+	background-color: #A4A4A4;
+	text-align: right;
+	position: fixed;
+	top: 25%;
+	right: 1%;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 4px;
+	border: 1px solid #191900;
+	background: rgba(18, 13, 1, 0.5);
+	-webkit-box-shadow: #B3B3B3 6px 6px 6px inset;
+	-moz-box-shadow: #B3B3B3 6px 6px 6px inset;
+	box-shadow: #B3B3B3 6px 6px 6px inset;
+	background-color: #A4A4A4
+}
+
+.right-tab img {
+	vertical-align: middle;
+	height: 40px;
+	width: 40px;
+	margin: auto;
+	padding: 3px;
+}
+
+label {
+	float: left;
+	width: 180px;
+	font-weight: bold;
+	 font-family: 'Montserrat', 'Helvetica', Arial, sans-serif;
+}
+
+.ngdialog-content input, textarea, select {
+	width: 190px;
+	margin-bottom: 5px;
+	font-family: 'Montserrat', 'Helvetica', Arial, sans-serif;
+}
+
+
+
+textarea {
+	height: 150px;
+}
+
+.boxes {
+	width: 1em;
+}
+
+
+br {
+	clear: left;
+}
+
+.action-btn {
+    display: inline-block;
+    color: #fff;
+    background: #00465c;
+    border: 2px solid transparent;
+    font-family: 'Montserrat', 'Helvetica', Arial, sans-serif;
+    font-size: 12px;
+    padding: 0px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+
+.action-nv-btn {
+    display: inline-block;
+    color: #fff;
+    background: #25BEB6;
+    border: 2px solid transparent;
+    font-family: 'Montserrat', 'Helvetica', Arial, sans-serif;
+    font-size: 12px;
+    padding: 0px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 5px;
+}
