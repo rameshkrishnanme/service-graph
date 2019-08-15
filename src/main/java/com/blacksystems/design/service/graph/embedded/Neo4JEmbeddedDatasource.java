@@ -1,4 +1,4 @@
-package com.mindtree.design.service.graph.embedded;
+package com.blacksystems.design.service.graph.embedded;
 
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;

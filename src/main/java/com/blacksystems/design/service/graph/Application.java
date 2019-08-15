@@ -1,4 +1,4 @@
-package com.mindtree.design.service.graph;
+package com.blacksystems.design.service.graph;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

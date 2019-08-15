@@ -1,4 +1,4 @@
-package com.mindtree.design.service.graph.label;
+package com.blacksystems.design.service.graph.label;
 
 import org.neo4j.graphdb.RelationshipType;
 

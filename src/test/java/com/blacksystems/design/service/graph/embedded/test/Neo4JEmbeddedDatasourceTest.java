@@ -1,4 +1,4 @@
-package com.mindtree.design.service.graph.embedded.test;
+package com.blacksystems.design.service.graph.embedded.test;
 
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Relationship;
@@ -6,7 +6,7 @@ import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
 
-import com.mindtree.design.service.graph.embedded.Neo4JEmbeddedDatasource;
+import com.blacksystems.design.service.graph.embedded.Neo4JEmbeddedDatasource;
 
 public class Neo4JEmbeddedDatasourceTest {
 

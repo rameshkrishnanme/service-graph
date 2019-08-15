@@ -1,4 +1,4 @@
-package com.mindtree.design.service.graph.util;
+package com.blacksystems.design.service.graph.util;
 
 import java.io.IOException;
 import java.net.URL;

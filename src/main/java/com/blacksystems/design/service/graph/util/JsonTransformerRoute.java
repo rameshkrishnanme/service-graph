@@ -1,4 +1,4 @@
-/*package com.mindtree.design.service.graph.util;
+/*package com.blacksystems.design.service.graph.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

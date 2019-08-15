@@ -1,4 +1,4 @@
-/*package com.mindtree.design.service.graph;
+/*package com.blacksystems.design.service.graph;
 
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
@@ -6,7 +6,7 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.slf4j.Logger;
 
-import com.mindtree.design.service.graph.util.Util;
+import com.blacksystems.design.service.graph.util.Util;
 
 public class ServiceGraphServer {
     private Server server;

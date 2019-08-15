@@ -1,4 +1,4 @@
-package com.mindtree.design.service.graph.executor;
+package com.blacksystems.design.service.graph.executor;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,7 +9,7 @@ import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
 
-import com.mindtree.design.service.graph.embedded.Neo4JEmbeddedDatasource;
+import com.blacksystems.design.service.graph.embedded.Neo4JEmbeddedDatasource;
 
 public class JdbcEmbeddedCypherExecutor implements CypherExecutor {
 

@@ -1,4 +1,4 @@
-package com.mindtree.design.service.graph;
+package com.blacksystems.design.service.graph;
 
 import static org.neo4j.helpers.collection.MapUtil.map;
 
@@ -13,10 +13,10 @@ import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Result;
 import org.springframework.stereotype.Component;
 
-import com.mindtree.design.service.graph.executor.CypherExecutor;
-import com.mindtree.design.service.graph.executor.JdbcEmbeddedCypherExecutor;
-import com.mindtree.design.service.graph.label.NodeLabel;
-import com.mindtree.design.service.graph.label.NodeRelationship;
+import com.blacksystems.design.service.graph.executor.CypherExecutor;
+import com.blacksystems.design.service.graph.executor.JdbcEmbeddedCypherExecutor;
+import com.blacksystems.design.service.graph.label.NodeLabel;
+import com.blacksystems.design.service.graph.label.NodeRelationship;
 
 @SuppressWarnings("rawtypes")
 @Component

@@ -1,1 +1,1 @@
-call java -Xdebug -Xrunjdwp:transport=dt_socket,address=8091,server=y,suspend=n -cp target/service-graph-0.1-SNAPSHOT.jar com.mindtree.design.service.graph.ServiceGraph 
+call java -Xdebug -Xrunjdwp:transport=dt_socket,address=8091,server=y,suspend=n -cp target/service-graph-0.1-SNAPSHOT.jar com.blacksystems.design.service.graph.ServiceGraph 

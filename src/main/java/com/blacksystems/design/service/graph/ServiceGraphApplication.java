@@ -1,4 +1,4 @@
-/*    package com.mindtree.design.service.graph;
+/*    package com.blacksystems.design.service.graph;
 
 import static org.neo4j.helpers.collection.MapUtil.map;
 import static spark.Spark.get;
@@ -13,7 +13,7 @@ import spark.Request;
 import spark.Response;
 import spark.servlet.SparkApplication;
 
-import com.mindtree.design.service.graph.util.JsonTransformerRoute;
+import com.blacksystems.design.service.graph.util.JsonTransformerRoute;
 
 public class ServiceGraphApplication implements SparkApplication {
 

@@ -1,4 +1,4 @@
-package com.mindtree.design.service.graph.controller;
+package com.blacksystems.design.service.graph.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mindtree.design.service.graph.ServiceGraphService;
+import com.blacksystems.design.service.graph.ServiceGraphService;
 
 @RestController
 public class GraphController {
