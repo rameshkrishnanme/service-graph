@@ -13,7 +13,7 @@
 		<version>1.0.1.RELEASE</version>
 	</parent>
 	<properties>
-		<neo4j.version>2.3.1</neo4j.version>
+		<neo4j.version>3.5.0</neo4j.version>
 		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
